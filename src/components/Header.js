@@ -7,7 +7,7 @@ function Header() {
         <h1>React Questionnaire ✨</h1>
 
         <div>
-          <a href="https://github.com/not-nakul" target="_blank">
+          <a href="https://github.com/not-nakul/react-qna" target="_blank">
             Source code 🔗
           </a>
           <p>Built with 💖 by Nakul</p>
