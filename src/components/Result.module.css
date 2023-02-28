@@ -1,0 +1,52 @@
+.results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+
+  background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.results header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.score-container {
+  font-size: 1.25rem;
+}
+
+.score-card thead {
+  font-weight: bold;
+}
+
+.score-card td,
+th {
+  padding: 0.75rem;
+  border: 2px dotted lightslategray;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.buttons-container button {
+  padding: 0.75rem;
+
+  border: 0;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-color: black;
+  color: white;
+
+  cursor: pointer;
+}
