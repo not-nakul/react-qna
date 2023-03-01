@@ -93,7 +93,7 @@ function QuestionList() {
 
           <header>
             <h1>
-              <img src={question} />
+              <img src={question} alt="questionmark" />
               {currentQuestion + 1}/{totalQuestions}
             </h1>
             <h1>

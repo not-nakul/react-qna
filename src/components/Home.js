@@ -17,7 +17,7 @@ function Home() {
         <ul className={classes["instructions"]}>
           {instructions.map((instruction) => (
             <li key={instruction.id}>
-              <img src={arrow} />
+              <img src={arrow} alt="arrow" />
               <p>{instruction.text}</p>
             </li>
           ))}
