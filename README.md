@@ -1,7 +1,4 @@
 # React QnA Application
-QnA application built using ReactJS, done as a part of an assessment.
-
-# About the project and its features:
 - an online assessment / QnA web application built using core React and ReactDOM without installing any other libraries
 - the bundler that I have used is Parcel
 - used useEffect, useContext, and useState hooks, and the React Context API
