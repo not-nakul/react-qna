@@ -11,3 +11,6 @@ QnA application built using ReactJS, done as a part of an assessment.
 - ability to edit choices
 - can be submitted when all the choices have been marked
 - scorecard
+
+### Test it out here:
+https://react-qna.netlify.app/
