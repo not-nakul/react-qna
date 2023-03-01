@@ -1,4 +1,4 @@
-.results {
+.homepage {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,27 +10,13 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.results header {
+.homepage header {
+  width: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
 
   font-weight: bold;
   font-size: 2rem;
-}
-
-.score-container {
-  font-size: 1.25rem;
-}
-
-.score-card thead {
-  font-weight: bold;
-}
-
-.score-card td,
-th {
-  padding: 0.75rem;
-  border: 2px dotted lightslategray;
 }
 
 .buttons-container {
@@ -40,20 +26,40 @@ th {
 }
 
 .buttons-container button {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
   padding: 0.75rem;
 
   border: 0;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   background-color: black;
+  border: 1px solid lightslategray;
   color: white;
 
   cursor: pointer;
 }
 
-.buttons-container img {
-  width: 30px;
+.buttons-container button:disabled {
+  background-color: transparent;
+  border: 1px solid lightslategray;
+  color: lightslategray;
+
+  cursor: not-allowed;
+}
+
+.instructions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  font-size: 1.25rem;
+}
+
+.instructions li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.instructions img {
+  width: 25px;
 }

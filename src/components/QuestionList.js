@@ -2,8 +2,13 @@ import { useEffect, useState } from "react";
 import { qnaData } from "../utils/constants";
 
 import Result from "./Result";
+import Navigation from "./Navigation";
 
 import classes from "./QuestionList.module.css";
+import next from "../assets/next.png";
+import previous from "../assets/previous.png";
+import time from "../assets/time.png";
+import question from "../assets/question.png";
 
 function QuestionList() {
   const [answers, setAnswers] = useState([]);
@@ -11,7 +16,7 @@ function QuestionList() {
   const [score, setScore] = useState(0);
   const [submitted, setSubmitted] = useState(false);
   const totalQuestions = qnaData.length;
-  const [timeLeft, setTimeLeft] = useState(600);
+  const [timeLeft, setTimeLeft] = useState(120);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -46,6 +51,10 @@ function QuestionList() {
     }
   }
 
+  function questionChangeHandler(id) {
+    setCurrentQuestion(id);
+  }
+
   function submitHandler(event) {
     event?.preventDefault();
 
@@ -67,7 +76,7 @@ function QuestionList() {
     setCurrentQuestion(0);
     setScore(0);
     setSubmitted(false);
-    setTimeLeft(600);
+    setTimeLeft(120);
   }
 
   return (
@@ -80,12 +89,15 @@ function QuestionList() {
         />
       ) : (
         <main className={classes["questions"]}>
+          <Navigation navigate={questionChangeHandler} />
+
           <header>
             <h1>
-              🤔 Question {currentQuestion + 1}/{totalQuestions}
+              <img src={question} />
+              {currentQuestion + 1}/{totalQuestions}
             </h1>
             <h1>
-              ⏳
+              <img src={time} alt="clock" />
               {` ${Math.floor(timeLeft / 60)}:${timeLeft % 60 < 10 ? "0" : ""}${
                 timeLeft % 60
               }`}
@@ -120,19 +132,19 @@ function QuestionList() {
                 onClick={previousQuestionHandler}
                 disabled={currentQuestion === 0}
               >
-                Previous ⏪
+                <img src={previous} alt="previous" />
               </button>
               <button
                 type="button"
                 onClick={nextQuestionHandler}
                 disabled={currentQuestion === totalQuestions - 1}
               >
-                Next ⏩
+                <img src={next} alt="next" />
               </button>
               {answers.length === totalQuestions &&
                 !answers.includes(undefined) && (
                   <button type="submit" disabled={answers.includes(null)}>
-                    Submit ✅
+                    Submit
                   </button>
                 )}
             </footer>

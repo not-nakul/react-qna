@@ -1,4 +1,4 @@
-.navbar-container {
+.navbar-bg {
   width: 100%;
 
   background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
@@ -15,8 +15,17 @@
 }
 
 .navbar h1 {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5em;
+
   font-weight: bold;
   font-size: 1.75rem;
+}
+
+.navbar img {
+  width: 45px;
 }
 
 .navbar div {

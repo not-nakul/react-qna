@@ -1,6 +1,6 @@
 export const qnaData = [
   {
-    id: "q1",
+    id: 1,
     question: "What is ReactJS?",
     choices: [
       "JavaScript library",
@@ -11,13 +11,13 @@ export const qnaData = [
     correct: "JavaScript library",
   },
   {
-    id: "q2",
+    id: 2,
     question: "What makes React so performant?",
     choices: ["Hooks", "Reconciliation", "JSX", "Components"],
     correct: "Reconciliation",
   },
   {
-    id: "q3",
+    id: 3,
     question: "What is JSX?",
     choices: [
       "JavaScript XML",
@@ -28,7 +28,7 @@ export const qnaData = [
     correct: "HTML like syntax",
   },
   {
-    id: "q4",
+    id: 4,
     question: "What are the different ways to create React components?",
     choices: [
       "Functional components",
@@ -39,7 +39,7 @@ export const qnaData = [
     correct: "Both A & B",
   },
   {
-    id: "q5",
+    id: 5,
     question: "What is Virtual DOM?",
     choices: [
       "HTML structure",
@@ -50,25 +50,25 @@ export const qnaData = [
     correct: "Representation of real DOM",
   },
   {
-    id: "q6",
+    id: 6,
     question: "What are React Hooks?",
     choices: ["Superpowers", "Components", "Imports", "Functions"],
     correct: "Functions",
   },
   {
-    id: "q7",
+    id: 7,
     question: "How many elements can a valid React Component return?",
     choices: ["1", "2", "3", "As many as possible"],
     correct: "1",
   },
   {
-    id: "q8",
+    id: 8,
     question: "Which of the following is used to handle code-splitting?",
     choices: ["React.memo", "React.fallback", "React.split", "React.lazy"],
     correct: "React.lazy",
   },
   {
-    id: "q9",
+    id: 9,
     question: "Which of the following best defines the key prop?",
     choices: [
       "it has no benefit whatsoever",
@@ -79,7 +79,7 @@ export const qnaData = [
     correct: "it is a way for React to identify a newly added item in a list",
   },
   {
-    id: "q10",
+    id: 10,
     question: "In ReactJS, what is State?",
     choices: [
       "It's a temporary storage of the elements",
@@ -89,4 +89,20 @@ export const qnaData = [
     ],
     correct: "It's an internal storage of the components",
   },
+];
+
+export const instructions = [
+  { id: 1, text: "This is a Multiple Choice QnA based around ReactJS" },
+  { id: 2, text: "There are a total of 10 questions" },
+  { id: 3, text: "Each question is mandatory" },
+  { id: 4, text: "There is no negative marking" },
+  { id: 5, text: "You can switch between questions and change the selection" },
+  { id: 6, text: "Each question rewards +1 score if marked correct" },
+  { id: 7, text: "Time limit is set to 2 minutes (~10s for each question)" },
+  {
+    id: 8,
+    text: "Once all questions have been marked, submit button is unlocked",
+  },
+  { id: 9, text: "Click on submit to display your scores" },
+  { id: 10, text: "You can retake the assessment however many times you want" },
 ];
