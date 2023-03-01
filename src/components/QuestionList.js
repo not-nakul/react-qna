@@ -9,6 +9,7 @@ import next from "../assets/next.png";
 import previous from "../assets/previous.png";
 import time from "../assets/time.png";
 import question from "../assets/question.png";
+import Modal from "./Modal";
 
 function QuestionList() {
   const [answers, setAnswers] = useState([]);
@@ -16,23 +17,28 @@ function QuestionList() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [submitted, setSubmitted] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(120);
+  const [showModal, setShowModal] = useState(false);
+  const [timeLeft, setTimeLeft] = useState(20);
   const totalQuestions = qnaData.length;
 
+  let timer;
   useEffect(() => {
-    const timer = setInterval(() => {
+    timer = setInterval(() => {
       setTimeLeft((prevTime) => prevTime - 1);
     }, 1000);
 
     if (timeLeft === 0) {
       clearInterval(timer);
-      alert("You ran out of time! Your choices have been submitted.");
+      // alert("You ran out of time! Your choices have been submitted.");
+      setShowModal(true);
       submitHandler();
       return;
     }
 
     return () => clearInterval(timer);
   }, [timeLeft]);
+
+  console.log(timeLeft);
 
   function answerUpdateHandler(event) {
     const updatedAnswers = [...answers];
@@ -60,8 +66,13 @@ function QuestionList() {
     setCurrentQuestion(id);
   }
 
+  function closeModal() {
+    setShowModal(false);
+  }
+
   function submitHandler(event) {
     event?.preventDefault();
+    clearInterval(timer);
 
     setScore(
       answers.reduce((total, answer, index) => {
@@ -82,17 +93,21 @@ function QuestionList() {
     setCurrentQuestion(0);
     setScore(0);
     setSubmitted(false);
-    setTimeLeft(120);
+    setShowModal(false);
+    setTimeLeft(20);
   }
 
   return (
     <section className="container">
       {submitted ? (
-        <Result
-          score={score}
-          totalQuestions={totalQuestions}
-          reset={resetHandler}
-        />
+        <>
+          {showModal && <Modal closeModal={closeModal} />}
+          <Result
+            score={score}
+            totalQuestions={totalQuestions}
+            reset={resetHandler}
+          />
+        </>
       ) : (
         <main className={classes["questions"]}>
           <Navigation navigate={questionChangeHandler} marked={marked} />
