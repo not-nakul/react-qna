@@ -21,11 +21,16 @@ function QuestionList() {
   const [timeLeft, setTimeLeft] = useState(20);
   const totalQuestions = qnaData.length;
 
-  let timer;
   useEffect(() => {
-    timer = setInterval(() => {
+    const timer = setInterval(() => {
       setTimeLeft((prevTime) => prevTime - 1);
     }, 1000);
+
+    if (submitted) {
+      setTimeLeft(null);
+      clearInterval(timer);
+      return;
+    }
 
     if (timeLeft === 0) {
       clearInterval(timer);
@@ -72,7 +77,6 @@ function QuestionList() {
 
   function submitHandler(event) {
     event?.preventDefault();
-    clearInterval(timer);
 
     setScore(
       answers.reduce((total, answer, index) => {
