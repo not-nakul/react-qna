@@ -1,5 +1,6 @@
 import classes from "./Header.module.css";
 import reactIcon from "../assets/favicon.png";
+import github from "../assets/github.png";
 
 function Header() {
   return (
@@ -11,7 +12,7 @@ function Header() {
 
         <div>
           <a href="https://github.com/not-nakul/react-qna" target="_blank">
-            Code 🔗
+            Code <img src={github} alt="github" />
           </a>
           <p>Built with 💖 by Nakul</p>
         </div>

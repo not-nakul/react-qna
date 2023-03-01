@@ -25,16 +25,21 @@
 }
 
 .navbar img {
-  width: 45px;
+  width: 40px;
 }
 
 .navbar div {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 1.5rem;
 }
 
 .navbar a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   padding: 0.5rem;
 
   text-decoration: none;

@@ -18,7 +18,7 @@ function QuestionList() {
   const [score, setScore] = useState(0);
   const [submitted, setSubmitted] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(20);
+  const [timeLeft, setTimeLeft] = useState(120);
   const totalQuestions = qnaData.length;
 
   useEffect(() => {
@@ -42,8 +42,6 @@ function QuestionList() {
 
     return () => clearInterval(timer);
   }, [timeLeft]);
-
-  console.log(timeLeft);
 
   function answerUpdateHandler(event) {
     const updatedAnswers = [...answers];
@@ -98,7 +96,7 @@ function QuestionList() {
     setScore(0);
     setSubmitted(false);
     setShowModal(false);
-    setTimeLeft(20);
+    setTimeLeft(120);
   }
 
   return (

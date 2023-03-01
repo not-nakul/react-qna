@@ -7,9 +7,9 @@ function Modal({ closeModal }) {
         <header>You ran out of time!</header>
         <div>
           <p>
-            Your choices have been submitted and scores have been evalutated
+            Your choices have been submitted and scores have been evalutated.
           </p>
-          <p>Click on the button below to view your scorecard</p>
+          <p>Click on the button below to view your scorecard.</p>
         </div>
         <button onClick={closeModal}>Okay</button>
       </section>

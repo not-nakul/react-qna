@@ -71,12 +71,12 @@ export const qnaData = [
     id: 9,
     question: "Which of the following best defines the key prop?",
     choices: [
-      "it has no benefit whatsoever",
-      "it is a way for React to identify a newly added item in a list",
-      "it is an atribute in HTML",
-      "it is the same as the id attribute",
+      "It has no benefit whatsoever",
+      "It is a way for React to identify a newly added item in a list",
+      "It is an atribute in HTML",
+      "It is the same as the id attribute",
     ],
-    correct: "it is a way for React to identify a newly added item in a list",
+    correct: "It is a way for React to identify a newly added item in a list",
   },
   {
     id: 10,
