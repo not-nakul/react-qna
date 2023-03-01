@@ -4,9 +4,8 @@ import classes from "./Navigation.module.css";
 import check from "../assets/check.png";
 
 function Navigation({ navigate, marked }) {
-  function navigateHandler(event) {
-    const id = parseInt(event.target.innerText);
-    navigate(id - 1);
+  function navigateHandler(index) {
+    navigate(index);
   }
 
   return (
@@ -14,10 +13,14 @@ function Navigation({ navigate, marked }) {
       <ul>
         {qnaData.map((item, index) => (
           <li key={item.id}>
-            <button onClick={navigateHandler}>
-              {item.id}{" "}
+            <button onClick={() => navigateHandler(index)}>
+              {item.id}
               {marked[index] === item.id - 1 ? (
-                <img src={check} alt="checkmark" />
+                <img
+                  src={check}
+                  alt="checkmark"
+                  className={classes["checkmark"]}
+                />
               ) : null}
             </button>
           </li>

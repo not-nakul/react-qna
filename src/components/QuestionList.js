@@ -114,11 +114,15 @@ function QuestionList() {
 
           <header>
             <h1>
-              <img src={question} alt="questionmark" />
+              <img
+                src={question}
+                alt="questionmark"
+                className={classes["icons"]}
+              />
               {currentQuestion + 1}/{totalQuestions}
             </h1>
             <h1>
-              <img src={time} alt="clock" />
+              <img src={time} alt="clock" className={classes["icons"]} />
               {` ${Math.floor(timeLeft / 60)}:${timeLeft % 60 < 10 ? "0" : ""}${
                 timeLeft % 60
               }`}
