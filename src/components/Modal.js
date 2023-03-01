@@ -7,7 +7,7 @@ function Modal({ closeModal }) {
         <header>You ran out of time!</header>
         <div>
           <p>
-            Your choices have been submitted and scores have been evalutated.
+            Your choices have been submitted and scores have been evaluated.
           </p>
           <p>Click on the button below to view your scorecard.</p>
         </div>
