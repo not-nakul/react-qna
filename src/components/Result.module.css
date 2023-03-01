@@ -10,6 +10,13 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+@media (width < 500px) {
+  .results {
+    padding: 1rem;
+    gap: 1rem;
+  }
+}
+
 .results header {
   display: flex;
   flex-direction: column;
@@ -19,8 +26,20 @@
   font-size: 2rem;
 }
 
+@media (width < 500px) {
+  .results header {
+    font-size: 1.35rem;
+  }
+}
+
 .score-container {
   font-size: 1.25rem;
+}
+
+@media (width < 500px) {
+  .score-container {
+    font-size: 1rem;
+  }
 }
 
 .score-card thead {
@@ -37,6 +56,12 @@ th {
   display: flex;
   justify-content: center;
   gap: 1rem;
+}
+
+@media (width < 500px) {
+  .buttons-container {
+    gap: 0.5rem;
+  }
 }
 
 .buttons-container button {
@@ -56,4 +81,10 @@ th {
 
 .buttons-container img {
   width: 30px;
+}
+
+@media (width < 500px) {
+  .buttons-container img {
+    width: 25px;
+  }
 }

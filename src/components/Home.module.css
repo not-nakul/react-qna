@@ -10,6 +10,13 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+@media (width < 500px) {
+  .homepage {
+    padding: 1rem;
+    gap: 1rem;
+  }
+}
+
 .homepage header {
   width: 100%;
   display: flex;
@@ -17,6 +24,12 @@
 
   font-weight: bold;
   font-size: 2rem;
+}
+
+@media (width < 500px) {
+  .homepage header {
+    font-size: 1.35rem;
+  }
 }
 
 .buttons-container {
@@ -54,12 +67,32 @@
   font-size: 1.25rem;
 }
 
+@media (width < 500px) {
+  .instructions {
+    gap: 0.25rem;
+
+    font-size: 1rem;
+  }
+}
+
 .instructions li {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
+@media (width < 500px) {
+  .instructions li {
+    gap: 0.5rem;
+  }
+}
+
 .instructions img {
   width: 25px;
+}
+
+@media (width < 500px) {
+  .instructions img {
+    width: 20px;
+  }
 }
