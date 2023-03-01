@@ -112,3 +112,8 @@
 .buttons-container img {
   width: 30px;
 }
+
+.buttons-container button:disabled img {
+  filter: grayscale(100%);
+  opacity: 50%;
+}

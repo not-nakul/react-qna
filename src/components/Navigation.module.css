@@ -12,6 +12,7 @@
 }
 
 .navigation button {
+  position: relative;
   padding: 0.25rem;
   width: 40px;
   height: 40px;
@@ -29,4 +30,11 @@
   width: 100%;
   border: 1px solid lightslategray;
   opacity: 50%;
+}
+
+.navigation img {
+  position: absolute;
+  width: 22px;
+  bottom: -9;
+  right: -9;
 }

@@ -12,11 +12,12 @@ import question from "../assets/question.png";
 
 function QuestionList() {
   const [answers, setAnswers] = useState([]);
+  const [marked, setMarked] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [submitted, setSubmitted] = useState(false);
-  const totalQuestions = qnaData.length;
   const [timeLeft, setTimeLeft] = useState(120);
+  const totalQuestions = qnaData.length;
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -37,6 +38,10 @@ function QuestionList() {
     const updatedAnswers = [...answers];
     updatedAnswers[currentQuestion] = event.target.value;
     setAnswers(updatedAnswers);
+
+    const updatedMarked = [...marked];
+    updatedMarked[currentQuestion] = currentQuestion;
+    setMarked(updatedMarked);
   }
 
   function previousQuestionHandler() {
@@ -73,6 +78,7 @@ function QuestionList() {
 
   function resetHandler() {
     setAnswers([]);
+    setMarked([]);
     setCurrentQuestion(0);
     setScore(0);
     setSubmitted(false);
@@ -89,7 +95,7 @@ function QuestionList() {
         />
       ) : (
         <main className={classes["questions"]}>
-          <Navigation navigate={questionChangeHandler} />
+          <Navigation navigate={questionChangeHandler} marked={marked} />
 
           <header>
             <h1>
